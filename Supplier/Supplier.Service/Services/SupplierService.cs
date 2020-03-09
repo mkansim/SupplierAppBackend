@@ -11,7 +11,7 @@ namespace Supplier.Service.Services
         private SupplierDBEntities1 database = new SupplierDBEntities1();
         public supplier GetSupplier(string name)
         {
-            return database.suppliers.Where(x => x.Name == name).FirstOrDefault();
+            return database.suppliers.Where(x => x.Name.ToLower() == name.ToLower()).FirstOrDefault();
         }
 
         public List<supplier> GetSuppliers()
